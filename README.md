@@ -106,6 +106,29 @@ The following parameters were used for the experiments in each script. Note that
     -   `NUM_RUNS`: 10
     -   `MAX_TRAINING_STEPS`: 50,000
     -   `EVAL_FREQ`: 1,000
+    -   **Base Config (`DEFAULT`)**:
+        -   `alpha`: 1.5
+        -   `bc_weight`: 2.0
+        -   `policy_noise`: 0.08 * max_action
+        -   `noise_clip`: 0.25 * max_action
+        -   `policy_freq`: 2
+        -   `batch_size`: 256
+        -   `lambda_clip`: (0.0, 10.0)
+        -   `discount`: 0.99
+        -   `tau`: 0.005
+    -   **Expert Dataset Overrides**:
+        -   `alpha`: 2.5
+        -   `bc_weight`: 1.0
+        -   `policy_noise`: 0.10 * max_action
+        -   `noise_clip`: 0.30 * max_action
+    -   **Medium Dataset Overrides**:
+        -   `alpha`: 1.0
+        -   `bc_weight`: 4.0
+        -   `lambda_clip`: (0.0, 1.2)
+        -   `policy_noise`: 0.20 * max_action
+        -   `noise_clip`: 0.50 * max_action
+        -   `batch_size`: 1024
+        -   `episode_filter_frac`: 0.50
 
 -   **`TD3PlusBC/default.py`**
     -   `NUM_RUNS`: 10
