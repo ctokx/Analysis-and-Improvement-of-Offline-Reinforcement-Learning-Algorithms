@@ -88,6 +88,25 @@ def filter_topk_by_return(ds, keep_frac=0.8):
 
 ![Custom vs Default TD3+BC](customvsdefault.png)
 
+## Datasets
+The experiments were conducted on the following Minari datasets:
+
+-   `mujoco/halfcheetah/expert-v0`
+-   `mujoco/pusher/expert-v0`
+-   `mujoco/reacher/expert-v0`
+-   `mujoco/swimmer/expert-v0`
+-   `mujoco/walker2d/expert-v0`
+-   `mujoco/inverteddoublependulum/expert-v0`
+-   `mujoco/hopper/expert-v0`
+-   `mujoco/InvertedPendulum/expert-v0`
+-   `mujoco/swimmer/medium-v0`
+-   `mujoco/walker2d/medium-v0`
+-   `mujoco/invertedpendulum/medium-v0`
+-   `mujoco/hopper/medium-v0`
+-   `mujoco/inverteddoublependulum/medium-v0`
+-   `mujoco/reacher/medium-v0`
+-   `mujoco/halfcheetah/medium-v0`
+
 ## Experiment Parameters
 The following parameters were used for the experiments in each script. Note that some hyperparameters are dynamically selected based on the dataset type (medium or expert), as detailed in the "Custom TD3+BC Implementation" section.
 
