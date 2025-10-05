@@ -88,6 +88,37 @@ def filter_topk_by_return(ds, keep_frac=0.8):
 
 ![Custom vs Default TD3+BC](customvsdefault.png)
 
+## Experiment Parameters
+The following parameters were used for the experiments in each script. Note that some hyperparameters are dynamically selected based on the dataset type (medium or expert), as detailed in the "Custom TD3+BC Implementation" section.
+
+-   **`behavior cloning/bc.py`**
+    -   `NUM_RUNS`: 10
+    -   `NUM_EPOCHS`: 20
+    -   `BATCH_SIZE`: 64
+    -   `LEARNING_RATE`: 1e-3
+
+-   **`CQL_IQL/cql_iql.py`**
+    -   `NUM_RUNS`: 10
+    -   `MAX_TRAINING_STEPS`: 50,000
+    -   `EVAL_FREQ`: 1,000
+
+-   **`TD3PlusBC/custom_TD3PlusBC.py`**
+    -   `NUM_RUNS`: 10
+    -   `MAX_TRAINING_STEPS`: 50,000
+    -   `EVAL_FREQ`: 1,000
+
+-   **`TD3PlusBC/default.py`**
+    -   `NUM_RUNS`: 10
+    -   `TRAINING_STEPS`: 50,000
+    -   `EVAL_INTERVAL`: 1,000
+    -   `d3rlpy TD3PlusBCConfig`:
+        -   `batch_size`: 256
+        -   `alpha`: 2.5
+        -   `actor_learning_rate`: 3e-4
+        -   `critic_learning_rate`: 3e-4
+        -   `tau`: 0.005
+        -   `gamma`: 0.99
+
 ## How to Run the Code
 Each algorithm is implemented in a self-contained script.
 
