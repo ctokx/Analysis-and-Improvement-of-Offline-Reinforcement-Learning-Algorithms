@@ -5,9 +5,22 @@
 ## Project Overview
 Offline Reinforcement Learning (Offline-RL) enables agents to learn optimal policies from pre-collected datasets without further interaction with the environment. In this work, we conduct a comprehensive evaluation of four state-of-the-art Offline-RL algorithms: TD3+BC, Behavioral Cloning (BC), Implicit Q-Learning (IQL), and Conservative Q-Learning (CQL) on standard benchmark datasets. We additionally implement a custom version of TD3+BC with enhancements including dynamic hyperparameter selection, BC weight annealing, explicit state normalization, and episode filtering. 
 
-![HalfCheetah Environment](cheetah.gif)
-![Swimmer Environment](swimmer.gif)
-![Walker Environment](walker.gif)
+<table>
+  <tr>
+    <td align="center">HalfCheetah</td>
+    <td align="center">Swimmer</td>
+    <td align="center">Walker</td>
+  </tr>
+  <tr>
+    <td><img src="cheetah.gif" width="100%"></td>
+    <td><img src="swimmer.gif" width="100%"></td>
+    <td><img src="walker.gif" width="100%"></td>
+  </tr>
+</table>
+
+<p align="center">
+  <em>Agents trained on medium datasets using the enhanced TD3+BC algorithm.</em>
+</p>
 
 Experimental results demonstrate that TD3+BC substantially outperforms BC in high-sensitivity environments such as Walker2D and HalfCheetah, while IQL and CQL achieve superior performance on other tasks. Comparison with the legacy d3rlpy implementation confirms the effectiveness of our custom enhancements. These findings emphasize the importance of algorithmic adaptation and dataset quality in Offline-RL and provide guidance for robust offline policy learning.
 
