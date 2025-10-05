@@ -6,6 +6,8 @@
 Offline Reinforcement Learning (Offline-RL) enables agents to learn optimal policies from pre-collected datasets without further interaction with the environment. In this work, we conduct a comprehensive evaluation of four state-of-the-art Offline-RL algorithms: TD3+BC, Behavioral Cloning (BC), Implicit Q-Learning (IQL), and Conservative Q-Learning (CQL) on standard benchmark datasets. We additionally implement a custom version of TD3+BC with enhancements including dynamic hyperparameter selection, BC weight annealing, explicit state normalization, and episode filtering. 
 
 ![HalfCheetah Environment](cheetah.gif)
+![Swimmer Environment](swimmer.gif)
+![Walker Environment](walker.gif)
 
 Experimental results demonstrate that TD3+BC substantially outperforms BC in high-sensitivity environments such as Walker2D and HalfCheetah, while IQL and CQL achieve superior performance on other tasks. Comparison with the legacy d3rlpy implementation confirms the effectiveness of our custom enhancements. These findings emphasize the importance of algorithmic adaptation and dataset quality in Offline-RL and provide guidance for robust offline policy learning.
 
@@ -21,6 +23,8 @@ We evaluate four state-of-the-art Offline-RL algorithms: TD3+BC, BC, IQL, and CQ
 
 ### Custom TD3+BC Implementation
 Our implementation introduces several modifications that vary based on dataset quality.
+
+![Custom vs Default TD3+BC](customvsdefault.png)
 
 #### 1. Dynamic Hyperparameter Selection
 The `choose_profile()` function selects hyperparameters based on dataset name matching. Expert and medium datasets receive distinct configurations for batch size, BC weight, policy noise, and lambda clipping bounds.
@@ -93,13 +97,13 @@ python CQL_IQL/cql_iql.py
 We present a comprehensive evaluation of four state-of-the-art Offline-RL algorithms. TD3+BC with our proposed enhancements consistently outperforms BC in high-sensitivity tasks, while IQL and CQL demonstrate strong performance on additional benchmarks. These results underscore the importance of algorithmic adaptation and dataset quality for robust offline policy learning. Future work will investigate adaptive data selection and automated hyperparameter optimization for improved generalization across tasks.
 
 ## References
-[1] D. Pomerleau, “Alvinn: An autonomous land vehicle in a neural network,” in Advances in Neural Information Processing Systems, 1988.
-[2] S. Fujimoto and S. Gu, “A minimalist approach to offline reinforcement learning,” in Advances in Neural Information Processing Systems, 2021.
-[3] I. Kostrikov, A. Nair, and S. Levine, “Offline reinforcement learning with implicit q-learning,” in Proc. International Conference on Learning Representations (ICLR), 2022.
-[4] A. Kumar, A. Zhou, G. Tucker, and S. Levine, “Conservative q-learning for offline reinforcement learning,” in Advances in Neural Information Processing Systems, 2020.
-[5] M. L. Puterman, Markov Decision Processes: Discrete Stochastic Dynamic Programming. Wiley, 1994.
-[6] S. Levine, A. Kumar, G. Tucker, and J. Fu, “Offline reinforcement learning: Tutorial, review, and perspectives on open problems,” arXiv preprint arXiv:2005.01643, 2020.
-[7] S. Fujimoto and S. S. Gu, “A minimalist approach to offline reinforcement learning,” 2021. [Online]. Available: https://arxiv.org/abs/2106.06860
-[8] S. Fujimoto, H. van Hoof, and D. Meger, “Addressing function approximation error in actor-critic methods,” in Proc. International Conference on Machine Learning (ICML), 2018.
-[9] I. Kostrikov, A. Nair, and S. Levine, “Offline reinforcement learning with implicit q-learning,” 2021. [Online]. Available: https://arxiv.org/abs/2110.06169
-[10] A. Kumar, A. Zhou, G. Tucker, and S. Levine, “Conservative q-learning for offline reinforcement learning,” 2020. [Online]. Available: https://arxiv.org/abs/2006.04779
+1. D. Pomerleau, “Alvinn: An autonomous land vehicle in a neural network,” in Advances in Neural Information Processing Systems, 1988.
+2. S. Fujimoto and S. Gu, “A minimalist approach to offline reinforcement learning,” in Advances in Neural Information Processing Systems, 2021.
+3. I. Kostrikov, A. Nair, and S. Levine, “Offline reinforcement learning with implicit q-learning,” in Proc. International Conference on Learning Representations (ICLR), 2022.
+4. A. Kumar, A. Zhou, G. Tucker, and S. Levine, “Conservative q-learning for offline reinforcement learning,” in Advances in Neural Information Processing Systems, 2020.
+5. M. L. Puterman, Markov Decision Processes: Discrete Stochastic Dynamic Programming. Wiley, 1994.
+6. S. Levine, A. Kumar, G. Tucker, and J. Fu, “Offline reinforcement learning: Tutorial, review, and perspectives on open problems,” arXiv preprint arXiv:2005.01643, 2020.
+7. S. Fujimoto and S. S. Gu, “A minimalist approach to offline reinforcement learning,” 2021. [Online]. Available: https://arxiv.org/abs/2106.06860
+8. S. Fujimoto, H. van Hoof, and D. Meger, “Addressing function approximation error in actor-critic methods,” in Proc. International Conference on Machine Learning (ICML), 2018.
+9. I. Kostrikov, A. Nair, and S. Levine, “Offline reinforcement learning with implicit q-learning,” 2021. [Online]. Available: https://arxiv.org/abs/2110.06169
+10. A. Kumar, A. Zhou, G. Tucker, and S. Levine, “Conservative q-learning for offline reinforcement learning,” 2020. [Online]. Available: https://arxiv.org/abs/2006.04779
